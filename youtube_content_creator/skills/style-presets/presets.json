@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "description": "Style presets for YouTube content pipeline. Each preset defines style_block, negative_prompt, aspect_ratio, and model_hint for Leonardo AI image generation.",
+  "usage": "Reference preset name in Step 2 input. The matching config will be injected into the scene JSON output.",
+
+  "presets": {
+
+    "bible_cinematic": {
+      "description": "Bible channel — epic cinematic style, photorealistic, US market",
+      "niche": "bible",
+      "style_block": "cinematic still, epic volumetric lighting, ancient Near East setting, atmospheric haze, dramatic chiaroscuro, photorealistic, anamorphic 35mm lens, warm golden color grading, ultra-detailed, 8K resolution",
+      "negative_prompt": "cartoon, anime, flat illustration, modern clothing, contemporary setting, text, watermark, blurry, low quality, duplicate, deformed hands, extra limbs, ugly face, oversaturated",
+      "aspect_ratio": "16:9",
+      "model_hint": "Leonardo Phoenix or Flux Dev",
+      "notes": "Best for miracle scenes, epic landscapes, divine moments. Feels like a Hollywood biblical film."
+    },
+
+    "bible_classical": {
+      "description": "Bible channel — classical oil painting style, reverent and timeless",
+      "niche": "bible",
+      "style_block": "classical oil painting, dramatic chiaroscuro lighting, rich textured canvas, epic biblical illustration, inspired by Rembrandt and Caravaggio, deep warm colors, golden highlights, museum quality, masterpiece",
+      "negative_prompt": "photorealistic, 3D render, CGI, cartoon, anime, modern style, text, watermark, blurry, sketch, flat colors",
+      "aspect_ratio": "16:9",
+      "model_hint": "Leonardo Kino XL or DreamShaper",
+      "notes": "Hides AI artifacts better than cinematic style. Best for intimate character moments and prayer scenes. Timeless feel that won't look dated."
+    },
+
+    "storytelling_dark": {
+      "description": "Storytelling channel — dark fantasy, mysterious, dramatic atmosphere",
+      "niche": "storytelling",
+      "style_block": "dark fantasy digital illustration, cinematic mood lighting, deep dramatic shadows, muted desaturated color palette with vivid accent colors, atmospheric fog and smoke, hyperdetailed, dynamic composition, concept art quality, ominous atmosphere",
+      "negative_prompt": "bright cheerful colors, cartoon, anime, flat illustration, low quality, text, watermark, blurry, oversaturated, happy tone",
+      "aspect_ratio": "16:9",
+      "model_hint": "Leonardo Alchemy v2 or SDXL",
+      "notes": "Best for horror stories, legends, folklore, mythology. High contrast with selective color pops. Creates tension and unease."
+    },
+
+    "storytelling_mystery": {
+      "description": "Storytelling channel — true crime, documentary, investigative noir",
+      "niche": "storytelling",
+      "style_block": "photorealistic documentary photography, film noir inspired, moody cinematic lighting, shallow depth of field, subtle grain film texture, cool desaturated blue and grey tones, investigative atmosphere, harsh directional shadows",
+      "negative_prompt": "cartoon, anime, fantasy elements, bright colors, warm tones, text, watermark, blurry, low quality, painterly style",
+      "aspect_ratio": "16:9",
+      "model_hint": "Leonardo Phoenix or Realistic Vision",
+      "notes": "Best for true crime, historical mysteries, unsolved cases. Feels grounded and journalistic. Avoids fantasy elements entirely."
+    }
+
+  },
+
+  "how_to_add_preset": {
+    "instructions": "Copy any existing preset block, change the key name, and update all fields. The preset name must match exactly what is passed in the STYLE_PRESET field of Step 2 input.",
+    "required_fields": ["description", "niche", "style_block", "negative_prompt", "aspect_ratio"],
+    "optional_fields": ["model_hint", "notes"]
+  },
+
+  "aspect_ratio_reference": {
+    "16:9": "Standard YouTube long-form video",
+    "9:16": "YouTube Shorts / TikTok / Reels — use for short-form content",
+    "1:1": "Square — for Instagram or thumbnail testing"
+  }
+}
