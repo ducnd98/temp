@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-Command",
+              "(New-Object Media.SoundPlayer 'D:/bin/sound-effect/task-completed.wav').PlaySync()"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt|idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-Command",
+              "(New-Object Media.SoundPlayer 'D:/bin/sound-effect/attention-please.wav').PlaySync()"
+            ],
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
